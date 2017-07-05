@@ -1,0 +1,147 @@
+.survey-wrap .survey-title {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+}
+
+body, html {
+    font-size: 63%;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+.survey-self-wrap {
+    margin: 2% auto 0;
+    width: 96%;
+}
+
+.survey-wrap .survey-title {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+}
+
+.survey-wrap .survey-desciption {
+    padding: 3px 1%;
+    line-height: 1.2rem;
+    font-size: .8rem;
+}
+
+.survey-theme-blue {
+    padding: 2%;
+}
+
+.survey-paper-clip {
+    width: 3%;
+    height: 80px;
+    background-size: 100% auto;
+}
+
+.mt20 {
+    margin-top: 2%
+}
+
+.survey-question-wrap .survey-question {
+    font-size: .8rem;
+    line-height: 1.2rem;
+}
+
+.survey-question-wrap .survey-question-datepicker, .survey-question-wrap .survey-question-text, .survey-question-wrap .survey-question-textarea, .survey-question-wrap .survey-question-select, .survey-question-wrap .survey-question-checkbox-choice, .survey-question-wrap .survey-question-radio .survey-question-radio-choice {
+    padding: 2% 0 2% 4%;
+}
+
+.survey-question-wrap .survey-question .survey-question-content .radio-image {
+    height: 14px;
+    width: 14px;
+    margin: 0 1% 0 0;
+    background-size: 100% auto;
+}
+
+.survey-theme-blue .survey-question-wrap .survey-question .survey-question-content .radio-image-check {
+    background-size: 100% auto;
+}
+
+select, textarea, input[type=text], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=number], input[type=email], input[type=url], input[type=search], input[type=tel], input[type=color], .uneditable-input {
+    font-size: .8rem;
+    width: 60%
+}
+
+.survey-question-wrap .survey-question .survey-question-content textarea {
+    width: 60%;
+    height: 5rem;
+}
+
+.survey-question-wrap .survey-page-bottom .survey-last-page, .survey-question-wrap .survey-page-bottom .survey-next-page, .survey-question-wrap .survey-page-bottom .survey-submit-page, .survey-question-wrap .survey-page-bottom .survey-save-page {
+    font-size: .8rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    margin: 0 2%;
+    width: 20%;
+}
+
+.survey-question-wrap .survey-page-bottom .survey-page-index {
+    margin-top: 2%;
+    font-size: .8rem;
+}
+
+.survey-question-wrap .survey-question .survey-question-title {
+    background: #eee;
+    padding: 3px 2%;
+    line-height: 1.1rem;
+}
+
+.survey-paper-clip {
+    position: absolute;
+    right: 2%;
+    top: -.8%;
+}
+
+.survey-question-wrap .survey-question .survey-question-content .checkbox-image {
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    margin: 0 1% 0 0;
+    background-size: 100% auto;
+}
+
+.survey-theme-blue .survey-question-wrap .survey-question .survey-question-content .checkbox-image-check {
+    background-size: 100% auto;
+}
+
+.navbox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: height 0.25s ease-in-out;
+    transition: height 0.25s ease-in-out;
+    z-index: 1000;
+}
+
+.navbox .tab {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 13px;
+    background-color: #dbdbdb;
+    white-space: nowrap;
+    vertical-align: top;
+    text-align: center;
+    border-right: 1px solid #fff;
+}
+
+.navbox .tab:last-child {
+    border-right: none;
+}
+
+.navbox {
+    width: 100%;
+}
+
+.navbox .curr {
+    background-color: #1da653
+}

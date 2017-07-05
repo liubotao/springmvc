@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.botao.dao.SurveyDao">
+
+    <resultMap type="com.botao.entry.Survey" id="surveyResultMap">
+        <id column="survey_id" property="surveyId"/>
+        <id column="survey_name" property="surveyName"/>
+        <id column="survey_title" property="surveyTitle"/>
+        <id column="survey_status" property="surveyStatus"/>
+        <id column="uid" property="uid"/>
+        <id column="addtime" property="addTime"/>
+    </resultMap>
+
+    <insert id="insertSurvey" parameterType="com.botao.entry.Survey" useGeneratedKeys="true" keyProperty="surveyId">
+        INSERT INTO survey
+        (survey_name, survey_title,addtime) VALUE (#{surveyName}, #{surveyTitle},#{addTime})
+    </insert>
+
+    <update id="updateSurvey">
+        UPDATE survey
+        <set>
+            <if test="surveyName != null">
+                survey_name = #{surveyName},
+            </if>
+            <if test="surveyTitle != null">
+                survey_title = #{surveyTitle},
+            </if>
+            <if test="surveyStatus != null">
+                survey_status = #{surveyStatus}
+            </if>
+            WHERE survey_id = #{surveyId}
+        </set>
+    </update>
+
+    <delete id="deleteSurvey">
+        DELETE FROM survey WHERE survey_id = #{surveyId}
+    </delete>
+
+    <select id="getSurveyList" resultMap="surveyResultMap">
+        SELECT * FROM survey ORDER BY survey_id DESC limit #{limit} offset #{offset}
+    </select>
+
+    <select id="getSurvey" resultMap="surveyResultMap">
+        SELECT * FROM survey WHERE survey_id = #{surveyId}
+    </select>
+
+    <select id="getSurveyTotal" resultType="int">
+        SELECT count(*) FROM survey
+    </select>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.botao.dao.SurveyContentDao">
+
+    <resultMap type="com.botao.entry.SurveyContent" id="surveyContentResultMap">
+        <id column="survey_id" property="surveyId"/>
+        <id column="survey_content" property="content"/>
+        <id column="survey_logic" property="logic"/>
+    </resultMap>
+
+
+    <insert id="insertContent" parameterType="com.botao.entry.SurveyContent">
+        INSERT INTO survey_content(survey_id, survey_content, survey_logic) VALUE (#{surveyId}, #{content}, #{logic})
+    </insert>
+
+    <update id="updateContent">
+        UPDATE survey_content SET
+        survey_content = #{content},
+        survey_logic = #{logic}
+        WHERE survey_id = #{surveyId}
+    </update>
+
+    <select id="getContent" resultMap="surveyContentResultMap">
+        SELECT * FROM survey_content WHERE survey_id = #{surveyId}
+    </select>
+
+    <delete id="deleteSurveyContent">
+        DELETE FROM survey_content WHERE survey_id = #{surveyId}
+    </delete>
+</mapper>

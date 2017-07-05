@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.botao.dao.SurveyAnswerDao">
+
+    <resultMap type="com.botao.entry.SurveyAnswer" id="surveyAnswerResultMap">
+        <id column="survey_id" property="surveyId"/>
+        <id column="question_id" property="questionId"/>
+        <id column="question_type" property="questionType"/>
+        <id column="choice" property="choice"/>
+        <id column="content" property="content"/>
+        <id column="cols" property="cols"/>
+        <id column="rows" property="rows"/>
+        <id column="uid" property="uid"/>
+        <id column="addtime" property="addTime"/>
+    </resultMap>
+
+    <insert id="insertAnswerList" parameterType="java.util.List">
+        INSERT INTO survey_answer(survey_id, question_id, question_type, choice, content, cols, rows, uid, addtime)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.surveyId},
+            #{item.questionId},#{item.questionType},#{item.choice},#{item.content},#{item.cols},#{item.rows},#{item.uid},#{item.addTime})
+        </foreach>
+    </insert>
+
+    <delete id="deleteSurveyAnswerList">
+        DELETE FROM survey_answer WHERE survey_id = #{surveyId}
+    </delete>
+
+</mapper>
